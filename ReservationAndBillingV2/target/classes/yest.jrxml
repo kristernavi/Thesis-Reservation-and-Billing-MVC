@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-10T00:22:35 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4caff484-b35a-459a-a6f9-036e1eefb432">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="id" class="java.lang.Long"/>
+	<field name="room_no" class="java.lang.Long"/>
+	<field name="rate" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="34" width="100" height="20" uuid="3961f70c-7f7e-4e8d-8d92-46853b6475ea"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="28" width="100" height="20" uuid="6073e684-bcac-4302-9bfa-364aec685d5c"/>
+				<text><![CDATA[Room Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="28" width="100" height="20" uuid="80ebc8c3-7ed1-4af4-90e2-50ad344a08a2"/>
+				<text><![CDATA[Room Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="28" width="100" height="20" uuid="28b21c86-0128-43b9-8330-3be9ddcf651e"/>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="220" y="45" width="100" height="20" uuid="7fc43cb6-f4a9-4afa-b34f-a1f48e291e42"/>
+				<textFieldExpression><![CDATA[$F{room_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="45" width="100" height="20" uuid="dca6e60f-253b-448b-84c5-13a286077046"/>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="45" width="100" height="20" uuid="7749cf59-3fb3-44c8-9618-c9a429e6261f"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

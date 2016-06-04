@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-09T16:54:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" isIgnorePagination="true" uuid="88581be7-5e4b-44d5-a775-0b2add6ddebb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="room_no" class="java.lang.Long"/>
+	<field name="dateList" class="java.util.List"/>
+	<field name="total_room" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<subreport>
+				<reportElement x="103" y="12" width="339" height="28" uuid="494a9092-a90d-4a7f-b089-4eeea99ed2e0"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{dateList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["D:/thesis3/ReservationAndBillingV2/src/main/resources/sub_report2.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="11" y="12" width="100" height="30" uuid="85598093-eb81-4714-9bf9-9c05417a484f"/>
+				<textFieldExpression><![CDATA[$F{room_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="10" width="50" height="30" uuid="08c78214-aaa7-41e6-9ab6-4dd8fe979528"/>
+				<textFieldExpression><![CDATA[$F{total_room}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-09T19:46:28 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Occupancy3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="d575f0b0-7643-458b-86ef-6e632efa2989">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.util.Date"/>
+	<field name="listOccReport" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="10" width="186" height="60" uuid="50c89fdc-cb27-47e0-8c27-fc8dfd07dd99"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[BODARE Pension House]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="24" width="170" height="30" uuid="b589d283-072d-490e-9c1d-5c01a7aa740b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Occupancy Report as of]]></text>
+			</staticText>
+			<textField pattern="MMMM yyyy">
+				<reportElement x="242" y="47" width="100" height="21" uuid="d18f1491-259c-4d7f-951a-43424638316b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="40" width="100" height="30" uuid="80988684-318d-41ae-a4ca-995a1031b7ed"/>
+				<textElement>
+					<font size="11"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Room Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="40" width="100" height="30" uuid="bcaa1a18-6f03-44aa-a6d6-d5ec709afd52"/>
+				<textElement>
+					<font size="11"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Day]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="40" width="100" height="30" uuid="66745b82-cef2-4ad0-ae4d-0fdbfaa1b089"/>
+				<textElement>
+					<font size="11"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement x="-11" y="0" width="571" height="40" uuid="0ff5654f-ef61-40cd-88ec-c848d78aeea4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="25" uuid="c7ff8d7a-cb67-4fa7-97ae-67e997d23cca"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listOccReport})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["D:/thesis3/ReservationAndBillingV2/src/main/resources/sub_report.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

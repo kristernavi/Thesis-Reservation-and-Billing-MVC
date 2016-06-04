@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-04T08:13:52 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Collection" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="55c167df-a309-4eb0-8e30-f40b11c2be43">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.util.Date"/>
+	<field name="amountOfCash" class="java.math.BigDecimal"/>
+	<field name="amountOfCredit_Card" class="java.math.BigDecimal"/>
+	<variable name="rowTotal" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$F{amountOfCash}.add( $F{amountOfCredit_Card} )]]></variableExpression>
+	</variable>
+	<variable name="granTotal2" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$V{rowTotal}]]></variableExpression>
+	</variable>
+	<variable name="cashTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amountOfCash}]]></variableExpression>
+	</variable>
+	<variable name="ccTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amountOfCredit_Card}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="226" y="28" width="139" height="22" uuid="6ee863e1-91ba-4648-b901-70ee612c7f0a"/>
+				<text><![CDATA[Collection Report as of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="12" width="137" height="30" uuid="a5df7e85-95ea-4b55-9647-636195a4d7d9"/>
+				<text><![CDATA[BODARE Pension House]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<textField pattern="MMMM yyyy">
+				<reportElement x="244" y="-31" width="100" height="16" uuid="07f62710-85ee-4209-aff6-0d2bc60c2a68"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="222" y="-13" width="101" height="1" uuid="c92b8d94-e3d6-4ff8-9060-ded7db13c77d"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="15" width="100" height="30" uuid="90a970f1-53ca-4193-8a38-4258bf1afd7e"/>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="13" width="100" height="30" uuid="f708fd95-fcf0-4881-935e-f648a4ff32aa"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="20" width="100" height="30" uuid="4397557c-a8af-4e43-ac5b-d81561e54f5e"/>
+				<text><![CDATA[Credit Card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="20" width="100" height="30" uuid="ab65cef0-a398-44ac-a432-f4b0ca275cf2"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Prevent">
+			<textField pattern="dd MMMM yyyy">
+				<reportElement x="55" y="2" width="100" height="30" uuid="de915396-9831-47fb-96ed-76c847fbf5f4"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Php #,##0.00">
+				<reportElement x="190" y="3" width="100" height="30" uuid="a0ab0739-4c45-4526-89ab-e7c8ea899816"/>
+				<textFieldExpression><![CDATA[$F{amountOfCash}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Php #,##0.00">
+				<reportElement x="312" y="3" width="100" height="30" uuid="850edc64-22e4-4295-a629-e90f3d39f5eb"/>
+				<textFieldExpression><![CDATA[$F{amountOfCredit_Card}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Php #,##0.00">
+				<reportElement x="430" y="3" width="100" height="30" uuid="802fbd51-c706-444c-9e62-88ae60a733c3"/>
+				<textFieldExpression><![CDATA[$V{rowTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="66" splitType="Immediate">
+			<textField pattern="Php #,##0.00">
+				<reportElement x="430" y="20" width="100" height="30" uuid="a93d1700-4f5b-485c-bf03-9f9b80c896b0"/>
+				<textFieldExpression><![CDATA[$V{granTotal2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="55" y="18" width="100" height="30" uuid="ae6bff7a-f582-41f4-9219-5320e903d29c"/>
+				<text><![CDATA[Grand Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-10" y="10" width="590" height="1" uuid="c0a91687-b773-4661-9099-c9b42e11edf3"/>
+			</line>
+			<textField pattern="Php #,##0.00">
+				<reportElement x="191" y="17" width="100" height="30" uuid="f2a413c8-170f-412d-a7b7-15314734cd0d"/>
+				<textFieldExpression><![CDATA[$V{cashTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="Php #,##0.00">
+				<reportElement x="313" y="17" width="100" height="30" uuid="fe4b900d-2fae-4069-8b39-9bc2439c891e"/>
+				<textFieldExpression><![CDATA[$V{ccTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
